@@ -57,7 +57,7 @@ def sumdata():
 
 GUI = Tk()
 GUI.geometry('600x700')
-GUI.title('โปรแกรมของฉัน')
+GUI.title('โปรแกรมสำหรับแม่ค้า v.0.0.1')
 
 file = PhotoImage(file='ดัมเบล.png')
 IMG = Label(GUI,image = file,text ='')
@@ -82,7 +82,7 @@ def Calculate(event=None):
 	
 	stamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-	# writetext(quantity,cal)
+
 	data = [timestamp(thai=False),quantity,cal]
 	writecsv(data)
 
@@ -101,7 +101,7 @@ B1.pack(ipadx=30, ipady=20,pady=20)  #pady ระยะจากขอบปุ�
 E1.bind('<Return>',Calculate)
 
 def SummaryData(event):
-	# pop up
+
 	sm = sumdata()
 	title = 'ยอดสรุปรวมทั้งหมด'
 	text ='จำนวนที่ขายได้: {} ลูก\nยอดขาย:{:,.2f}บาท' .format(sm[0],sm[1])
@@ -109,6 +109,7 @@ def SummaryData(event):
 
 
 GUI.bind('<F1>',SummaryData)
+GUI.bind('<F2>',SummaryData)
 
 E1.focus() # ให้เคอเซอร์ไปยังตำแหน่งของ E1
 GUI.mainloop()
